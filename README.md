@@ -24,3 +24,13 @@
 
 # API Endpoints
 1. http://localhost:5000/getdata
+2. http://localhost:5000/postdata
+   {
+    "email": "sharjil@gmail.com",
+    "name": "Sharjil",
+    "password": "123456778"
+   }
+
+# Postman
+1. For GET API use GET from postman dropdown and add http://localhost:5000/getdata
+2. For POST API use POST from postman dropdown and add http://localhost:5000/postdata URL and add data into body as a raw json
