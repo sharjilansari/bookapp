@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const User = require("../backend/models/userModel");
 const app = express();
 app.use(express.json());
 
@@ -15,11 +16,20 @@ app.use("/getdata", (req, res) => {
 })
 
 // POST API
-app.use("/postdata", (req, res) => {
+app.use("/postuserdata", async (req, res) => {
     const { email, name, password }  = req.body;
-    console.log(req.body.email, req.body.name);
-    let str = name + " your email is " + email + " and password is " + password
-    res.status(200).json({ data: str });
+    let data = await User.create({
+        email,
+        password,
+        name
+    })
+    res.status(200).json({ data: data });
+})
+
+// GET All User data
+app.use("/getuserdata", async (req, res) => {
+    let data = await User.find({});
+    res.status(200).json({ data: data });
 })
 
 mongoose.connect("mongodb+srv://mohdsharjil:1234@cluster0.pvtvgex.mongodb.net/test", {
