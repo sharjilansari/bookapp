@@ -9,11 +9,11 @@ app.use(cors());
 
 //POST API
 app.use("/postuserdata", async (req, res) => {
-    const { author, title, ISBN } = req.body;
+    const { author, title, isbn } = req.body;
     let data = await User.create({
         title,
         author,
-        ISBN
+        isbn
     })
     res.status(200).json({ data: data });
 })
