@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const User = require("../backend/models/userModel");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // GET API
 app.use("/getdata", (req, res) => {

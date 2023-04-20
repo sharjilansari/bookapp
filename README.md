@@ -15,7 +15,7 @@
 # Backend Setup
 1. Install node.js
 2. npm init 
-3. Install express, mongoose (npm i express mongoose)
+3. Install express, mongoose (npm i express mongoose cors)
 
 # Setup Application
 1. git clone "https://github.com/sharjilansari/bookapp"
